@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Account.css";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 
 class AccountContent extends Component {
   state = {
@@ -37,15 +39,15 @@ class AccountContent extends Component {
           </div>
           <div className="row1">
             {this.state.user.posts.map(post => (
-              <div className="ul1">
+              <Link to="/Home" className="ul1 text-dark">
                 <ul>
-                  <li className="name">{post.name}</li>
+                  <li className="text-dark">{post.name}</li>
                   <li className="date">{post.created_at}</li>
                   <li>
                     <img className="girl" src={post.image} alt="" />
                   </li>
                 </ul>
-              </div>
+              </Link>
             ))}
           </div>
         </React.Fragment>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -16,24 +16,16 @@ class Header extends Component {
           Makinahgram
         </a>
         <form class="form-inline">
-          <button
-            component={Link}
-            raised
+          <Link
             to="/Home"
             class="btn btn-sm btn-outline-secondary"
             type="button"
           >
             Home
-          </button>
-          <button
-            component={Link}
-            raised
-            to="/myAccount"
-            class="btn btn-sm btn-outline-secondary"
-            type="button"
-          >
+          </Link>
+          <Link to="/2" class="btn btn-sm btn-outline-secondary" type="button">
             myAccount
-          </button>
+          </Link>
         </form>
       </nav>
     );
