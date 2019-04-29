@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./Components/Header";
-import { HomeContent } from "./Components/Content/HomeContent";
-import { AccountContent } from "./Components/Content/AccountContent";
-import { Footer } from "./Components/Footer/Footer";
+import Header from "./Components/Header";
+import HomeContent from "./Components/Content/HomeContent";
+import AccountContent from "./Components/Content/AccountContent";
+import Footer from "./Components/Footer/Footer";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 export const Routes = () => {
@@ -15,7 +15,7 @@ export const Routes = () => {
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
-        <Route exact path="/Account" component={AccountContent} />
+        <Route exact path="/:id" component={AccountContent} />
       </Switch>
       <Footer />
     </React.Fragment>

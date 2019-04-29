@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 import "./Content.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 class HomeContent extends Component {
   state = {
@@ -23,7 +25,9 @@ class HomeContent extends Component {
                   <img src={post.user.thumbnail} alt={post.name} />
                 </div>
                 <div className="Post-user-nickname">
-                  <span>{post.user.name}</span>
+                  <Link className="text-dark" to={`/:${post.user.id}`}>
+                    {post.user.name}
+                  </Link>
                 </div>
               </div>
             </header>

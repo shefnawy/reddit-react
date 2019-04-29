@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Router, Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import "./Footer.css";
-import HomeContent from "../Content/HomeContent";
 
 class Footer extends Component {
   render() {
@@ -10,25 +9,17 @@ class Footer extends Component {
         <footer>
           <ul class="nav justify-content-center">
             <li class="nav-item">
-              <Link
-                to="/HomeContent"
-                class="nav-link active text-dark"
-                href="#"
-              >
+              <Link to="/Home" class="nav-link active text-dark" href="#">
                 Home
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/myAccount" class="nav-link text-dark" href="#">
+              <Link to="/Account" class="nav-link text-dark" href="#">
                 MyAccount
               </Link>
             </li>
           </ul>
         </footer>
-
-        <Router>
-          <HomeContent path="/HomeContent" />
-        </Router>
       </div>
     );
   }

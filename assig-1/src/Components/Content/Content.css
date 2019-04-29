@@ -25,6 +25,12 @@
   font-family: "PT Sans", sans-serif;
   font-weight: bold;
 }
+.Post-user-nickname link {
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
 .Post-image-bg {
   background-color: #efefef;
 }
