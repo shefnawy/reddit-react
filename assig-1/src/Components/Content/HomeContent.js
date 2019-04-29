@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import "./Content.css";
 
-class Content extends Component {
+class HomeContent extends Component {
   state = {
     posts: []
   };
@@ -43,4 +43,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default HomeContent;
