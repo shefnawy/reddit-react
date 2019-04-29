@@ -25,7 +25,7 @@ class HomeContent extends Component {
                   <img src={post.user.thumbnail} alt={post.name} />
                 </div>
                 <div className="Post-user-nickname">
-                  <Link className="text-dark" to={`/:${post.user.id}`}>
+                  <Link className="text-dark" to={`/${post.user.id}`}>
                     {post.user.name}
                   </Link>
                 </div>
