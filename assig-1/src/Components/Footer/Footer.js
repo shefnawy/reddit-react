@@ -5,16 +5,16 @@ import "./Footer.css";
 class Footer extends Component {
   render() {
     return (
-      <div class="container-fluid bg-light">
+      <div className="container-fluid bg-light">
         <footer>
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <Link to="/Home" class="nav-link active text-dark" href="#">
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <Link to="/Home" className="nav-link active text-dark" href="#">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/Account" class="nav-link text-dark" href="#">
+            <li className="nav-item">
+              <Link to="/2" className="nav-link text-dark" href="#">
                 MyAccount
               </Link>
             </li>

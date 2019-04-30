@@ -1,7 +1,7 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="col-"] {
-    width: 100%;
+    width: 80%;
   }
 }
 * {
@@ -79,9 +79,9 @@ a:active {
   margin-top: 50px;
 }
 
-.date {
+/* .date {
   margin-left: 150px;
-}
+} */
 
 .girl,
 .video,
