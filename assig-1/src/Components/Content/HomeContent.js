@@ -25,7 +25,7 @@ class HomeContent extends Component {
   render() {
     return (
       <div>
-        <CreatePost post={this.getPosts} />
+        <CreatePost getPost={this.getPosts} />
         {this.state.posts.map(post => {
           let date = new Date(post.created_at).toLocaleString();
 

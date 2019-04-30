@@ -19,7 +19,8 @@ class CreatePost extends Component {
     axios
       .post(`https://makinahgram-api.herokuapp.com/posts`, data)
       .then(res => {
-        this.props.post();
+        this.props.getPost();
+        this.setState({ image: "" });
       })
       .catch(Error => console.log(Error));
   };
@@ -33,6 +34,7 @@ class CreatePost extends Component {
           placeholder="Enter image URL"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
+          value={this.state.image}
           onChange={this.handleChange}
         />
         <div className="input-group-append">
