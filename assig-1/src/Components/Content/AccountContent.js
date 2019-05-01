@@ -23,18 +23,17 @@ class AccountContent extends Component {
       }
     );
   };
-  handleClick = post => {
-    console.log(this.state.posts);
-    Axios.delete(`https://makinahgram-api.herokuapp.com/posts/52`)
+  handleClick = id => {
+    Axios.delete(`https://makinahgram-api.herokuapp.com/posts/${id}`)
       .then(res => {
-        this.setState(previousState => {
-          return {
-            posts: previousState.posts.filter(p => p.id !== post.id)
-          };
-        });
+        this.setState(previousState => ({
+          posts: previousState.posts.filter(p => p.id !== id)
+        }));
+        this.accountPosts();
       })
       .catch(Error => console.log(Error));
   };
+
   render() {
     if (this.state.user) {
       return (
@@ -81,7 +80,7 @@ class AccountContent extends Component {
                       <button
                         type="button"
                         className="btn btn-secondary mt-3"
-                        onClick={this.handleClick}
+                        onClick={() => this.handleClick(post.id)}
                       >
                         Delete post
                       </button>
