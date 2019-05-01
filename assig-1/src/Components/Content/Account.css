@@ -53,27 +53,19 @@ a:active {
   background-color: darkslategrey;
 }
 
-.ul1 li,
-.ul2 li,
-.ul3 li,
-.ul4 li,
-.ul5 ul {
+.ul1 li {
   list-style: none;
   margin-right: 30px;
 
   flex-grow: 1;
 }
-.ul1 ul,
-.ul2 ul,
-.ul3 ul,
-.ul4 ul,
-.ul5 ul {
+.Link li {
   display: flex;
   width: 500px;
   margin: auto;
   margin-top: 20px;
   flex-wrap: wrap;
-  border: 1px solid black;
+  border: 2px solid black;
 
   padding: 50px 50px 50px 50px;
   margin-top: 50px;
@@ -160,12 +152,9 @@ footer ul {
   list-style: none;
   text-align: center;
 }
-.row1,
-.row2,
-.row3,
-.row4,
-.row5 {
+.row1 {
   display: flex;
+  flex-wrap: wrap;
   flex-basis: 50%;
   flex-direction: row;
   justify-content: space-around;
