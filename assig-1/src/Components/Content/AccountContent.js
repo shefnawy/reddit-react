@@ -4,11 +4,11 @@ import "./Account.css";
 import "./Content.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import DeletePost from "./DeletePost";
 
 class AccountContent extends Component {
   state = {
-    user: null
+    user: null,
+    posts: []
   };
 
   componentDidMount() {
@@ -19,11 +19,22 @@ class AccountContent extends Component {
     const { id } = this.props.match.params;
     Axios.get(`https://makinahgram-api.herokuapp.com/users/${id} `).then(
       res => {
-        this.setState({ user: res.data });
+        this.setState({ user: res.data, posts: res.data.posts });
       }
     );
   };
-
+  handleClick = post => {
+    console.log(this.state.posts);
+    Axios.delete(`https://makinahgram-api.herokuapp.com/posts/52`)
+      .then(res => {
+        this.setState(previousState => {
+          return {
+            posts: previousState.posts.filter(p => p.id !== post.id)
+          };
+        });
+      })
+      .catch(Error => console.log(Error));
+  };
   render() {
     if (this.state.user) {
       return (
@@ -50,7 +61,7 @@ class AccountContent extends Component {
               // let options = ()
               // date.toLocaleDateString();
               return (
-                <Link to="/Home" className="ul1 text-dark">
+                <div className="ul1 text-dark">
                   <ul>
                     <li>
                       <img src={this.state.user.thumbnail} alt="" />
@@ -61,14 +72,22 @@ class AccountContent extends Component {
 
                     <li className="date pl-5">Created at: {date}</li>
                     <li>
-                      <img className="girl" src={post.image} alt="" />
+                      <Link to="/Home">
+                        <img className="girl" src={post.image} alt="" />
+                      </Link>
                     </li>
                     <li>
                       {" "}
-                      <DeletePost accountPosts={this.accountPosts} />
+                      <button
+                        type="button"
+                        className="btn btn-secondary mt-3"
+                        onClick={this.handleClick}
+                      >
+                        Delete post
+                      </button>
                     </li>
                   </ul>
-                </Link>
+                </div>
               );
             })}
           </div>
