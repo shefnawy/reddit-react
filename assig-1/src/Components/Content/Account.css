@@ -59,7 +59,7 @@ a:active {
 
   flex-grow: 1;
 }
-.Link li {
+.ul1 ul {
   display: flex;
   width: 500px;
   margin: auto;

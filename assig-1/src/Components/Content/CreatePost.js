@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Content.css";
 
 class CreatePost extends Component {
   state = {
@@ -21,13 +22,15 @@ class CreatePost extends Component {
       .then(res => {
         this.props.getPost();
         this.setState({ image: "" });
-      })
-      .catch(Error => console.log(Error));
+      });
   };
 
   render() {
     return (
-      <form className="input-group mb-3" onSubmit={this.handleSubmit}>
+      <form
+        className="input-group mb-5 w-50 mt-5 "
+        onSubmit={this.handleSubmit}
+      >
         <input
           type="text"
           className="form-control"

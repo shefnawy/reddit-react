@@ -4,6 +4,7 @@ import "./Account.css";
 import "./Content.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import DeletePost from "./DeletePost";
 
 class AccountContent extends Component {
   state = {
@@ -11,13 +12,18 @@ class AccountContent extends Component {
   };
 
   componentDidMount() {
+    this.accountPosts();
+  }
+
+  accountPosts = () => {
     const { id } = this.props.match.params;
     Axios.get(`https://makinahgram-api.herokuapp.com/users/${id} `).then(
       res => {
         this.setState({ user: res.data });
       }
     );
-  }
+  };
+
   render() {
     if (this.state.user) {
       return (
@@ -56,6 +62,10 @@ class AccountContent extends Component {
                     <li className="date pl-5">Created at: {date}</li>
                     <li>
                       <img className="girl" src={post.image} alt="" />
+                    </li>
+                    <li>
+                      {" "}
+                      <DeletePost accountPosts={this.accountPosts} />
                     </li>
                   </ul>
                 </Link>
